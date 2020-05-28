@@ -1,0 +1,31 @@
+﻿@model Data.Word
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+<div>
+    <h4>Word</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Word1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Word1)
+        </dd>
+
+
+
+    </dl>
+
+</div>
+
+
+<p>
+    @Html.ActionLink("Next", "Index")
+</p>
+

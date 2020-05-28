@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Data.Word>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Word1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player.PlayerName)
+        </th>
+        <th></th>
+    </tr>
+    @{int y = 0;}
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            @{y++;}
+            <td>
+
+                @("Word " + y + " " + item.Player.PlayerName)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.PlayerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.WordsID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.WordsID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.WordsID })
+            </td>
+        </tr>
+    }
+
+</table>
